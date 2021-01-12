@@ -1,0 +1,71 @@
+function1
+Number of parameters: 2
+Number of variables: 12
+
+param1
+param2
+<var82 = STRING>
+<var1 = INT>
+<var2 = INT>
+while <var2 == INT>  do ++<<var1 = <var1 + <-INT> > >  <var2 = INT>  <var1 = INT>  >++
+<var2 = <var2 + <-INT> > >
+if <<var2 == INT> > then ++<<return <var1 + var2> >  >++
+<return INT>
+
+
+function2
+Number of parameters: 0
+Number of variables: 4
+
+<var21 = INT>
+<var9 = STRING>
+<var72 = <function1 (<var21, <INT, <STRING, INT> > > )> >
+
+function1:
+        init     R2 "$STR:" 22
+        copy     R3 R2
+        init     R4 "" 2
+        copy     R5 R4
+        init     R6 "" 3
+        copy     R7 R6
+        init     R10 "" 2
+        eq       R8 R9 R10
+        ifnz     R8, JMP L1
+L2:
+        ifnz     R8, JMP L1
+        init     R26 "" 1
+        neg      R25 R26
+        add      R23 R24 R25
+        copy     R24 R23
+        init     R30 "" 19
+        eq       R28 R29 R30
+        ifnz     R28, JMP L3
+L4:
+        nop
+        init     R34 "" 12
+        ret      R34
+L3:
+        add      R31 R32 R33
+        ret      R31
+        JMP L4
+L1:
+        init     R17 "" 2
+        neg      R16 R17
+        add      R14 R15 R16
+        copy     R18 R14
+        init     R19 "" 28
+        copy     R20 R19
+        init     R21 "" 5273
+        copy     R22 R21
+        JMP L2
+function2:
+        init     R0 "" 83
+        copy     R1 R0
+        init     R2 "$STR:" 15
+        copy     R3 R2
+        init     R5 "function1" 1
+        init     R7 "" 54
+        init     R8 "$STR:" 0
+        init     R9 "" 32
+        fcall    R4 R5 R6 R7 R8 R9
+        copy     R10 R5
